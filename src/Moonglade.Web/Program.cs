@@ -1,20 +1,28 @@
-﻿using AspNetCoreRateLimit;
+﻿using System.Globalization;
+using System.Net;
+using System.Text.Json.Serialization;
+
+using AspNetCoreRateLimit;
+
 using Edi.Captcha;
+
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.ApplicationInsights.Extensibility.Implementation;
 using Microsoft.AspNetCore.HttpOverrides;
+
 using Moonglade.Data.MySql;
 using Moonglade.Data.PostgreSql;
 using Moonglade.Data.SqlServer;
 using Moonglade.Notification.Client;
 using Moonglade.Pingback;
 using Moonglade.Syndication;
+
 using SixLabors.Fonts;
+
 using Spectre.Console;
-using System.Globalization;
-using System.Net;
-using System.Text.Json.Serialization;
+
 using WilderMinds.MetaWeblog;
+
 using Encoder = Moonglade.Web.Configuration.Encoder;
 
 Console.OutputEncoding = Encoding.UTF8;
@@ -25,10 +33,10 @@ var builder = WebApplication.CreateBuilder(args);
 string dbType = builder.Configuration.GetConnectionString("DatabaseType");
 string connStr = builder.Configuration.GetConnectionString("MoongladeDatabase");
 
-var cultures = new[] { "en-US", "zh-Hans" }.Select(p => new CultureInfo(p)).ToList();
+var cultures = new[] { "en-US", "de-DE" }.Select(p => new CultureInfo(p)).ToList();
 
 WriteParameterTable();
-AnsiConsole.MarkupLine("[link=https://github.com/EdiWang/Moonglade]GitHub: EdiWang/Moonglade[/]");
+AnsiConsole.MarkupLine("[link=https://github.com/saigkill/Moonglade]GitHub: saigkill/Moonglade[/]");
 
 ConfigureConfiguration();
 ConfigureServices(builder.Services);
@@ -102,7 +110,7 @@ void ConfigureServices(IServiceCollection services)
             }
 
             AnsiConsole.MarkupLine("Added known proxies [green]({0})[/]: {1}",
-                knownProxies.Length, 
+                knownProxies.Length,
                 System.Text.Json.JsonSerializer.Serialize(knownProxies).EscapeMarkup());
         }
     });
@@ -117,6 +125,15 @@ void ConfigureServices(IServiceCollection services)
         options.IdleTimeout = TimeSpan.FromMinutes(20);
         options.Cookie.HttpOnly = true;
     }).AddSessionBasedCaptcha(options => options.FontStyle = FontStyle.Bold);
+
+    //DSGVO
+    services.Configure<CookiePolicyOptions>(options =>
+    {
+        // Sets the display of the Cookie Consent banner (/Pages/Shared/_CookieConsentPartial.cshtml).
+        // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+        options.CheckConsentNeeded = context => true;
+        options.MinimumSameSitePolicy = SameSiteMode.Strict;
+    });
 
     services.AddLocalization(options => options.ResourcesPath = "Resources");
     services.AddControllers(options => options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()))

@@ -160,6 +160,8 @@
         </nav>
     </header>
 
+    <partial name="_CookieConsentPartial" />
+
     <div id="page-content" class="content">
         @if (null != ViewBag.HideSideBar && ViewBag.HideSideBar)
         {
@@ -175,8 +177,8 @@
                     <div class="row">
                         <div class="col-3">
                             <img src="@BlogConfig.GeneralSettings.AvatarUrl"
-                             alt="@BlogConfig.GeneralSettings.OwnerName"
-                             class="rounded-circle blogger-head-pic" />
+                                 alt="@BlogConfig.GeneralSettings.OwnerName"
+                                 class="rounded-circle blogger-head-pic" />
                         </div>
                         <div class="col-9">
                             <h4 class="text-center">

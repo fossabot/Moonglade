@@ -6,6 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<PackageProjectUrl>https://github.com/EdiWang/Moonglade</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/EdiWang/Moonglade</RepositoryUrl>
+		<UserSecretsId>bbb2a205-c78d-404b-8c7d-c5b8e9bea4d8</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -61,5 +62,9 @@
 		<ProjectReference Include="..\Moonglade.Pingback\Moonglade.Pingback.csproj" />
 		<ProjectReference Include="..\Moonglade.Syndication\Moonglade.Syndication.csproj" />
 		<ProjectReference Include="..\Moonglade.Theme\Moonglade.Theme.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resources\Pages\Shared\" />
 	</ItemGroup>
 </Project>

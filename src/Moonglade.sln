@@ -78,7 +78,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moonglade.Data.SqlServer", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moonglade.Data.MySql", "Moonglade.Data.MySql\Moonglade.Data.MySql.csproj", "{0267C513-2DB9-4697-A6FA-39BB83E1CA9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moonglade.Data.PostgreSql", "Moonglade.Data.PostgreSql\Moonglade.Data.PostgreSql.csproj", "{5750F136-DD4B-42F8-BA64-2371C2527505}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moonglade.Data.PostgreSql", "Moonglade.Data.PostgreSql\Moonglade.Data.PostgreSql.csproj", "{5750F136-DD4B-42F8-BA64-2371C2527505}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
