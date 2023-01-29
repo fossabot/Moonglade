@@ -1,5 +1,6 @@
 ﻿@using Moonglade.Utils
 @inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+@inject IViewLocalizer _localizer
 @{
     if (string.IsNullOrEmpty(BlogConfig.GeneralSettings.AvatarUrl))
     {
@@ -10,7 +11,22 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    @if (!string.IsNullOrWhiteSpace(BlogConfig.GeneralSettings.CanonicalPrefix))
+    {
+        <meta itemprop="publisher" href="@(Helper.ResolveCanonicalUrl(BlogConfig.GeneralSettings.CanonicalPrefix, Context.Request.Path))" />
+    }
+    <meta name='contact' content='@BlogConfig.GeneralSettings.OwnerEmail' />
+    <meta itemprop="copyrightHolder" name='copyright' content='Copyright (c) 2017 - @DateTime.Now.Year @_localizer["copyright"]' />
+    <meta itemprop="copyrightYear" content="@DateTime.Now.Year" />
+    <meta name="Distribution" content="global" />
+    <meta itemprop="inLanguage" name="language" content="German, English" />
+    <meta name="rating" content="General" />
+    <meta name="Robots" content="index, all" />
+    <meta name="Robots" content="index, follow" />
+    <meta name="revisit-after" content="14 days" />
+    <meta name="MSSmartTagsPreventParsing" content="True" />
     @if (IsSectionDefined("keywords"))
     {
         @await RenderSectionAsync("keywords", false)

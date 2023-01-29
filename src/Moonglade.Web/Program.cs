@@ -9,6 +9,7 @@ using Edi.Captcha;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.ApplicationInsights.Extensibility.Implementation;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 using Moonglade.Data.MySql;
 using Moonglade.Data.PostgreSql;
@@ -138,6 +139,7 @@ void ConfigureServices(IServiceCollection services)
     services.AddLocalization(options => options.ResourcesPath = "Resources");
     services.AddControllers(options => options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()))
             .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()))
+            .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
             .ConfigureApiBehaviorOptions(ConfigureApiBehavior.BlogApiBehavior);
     services.AddRazorPages()
             .AddDataAnnotationsLocalization(options => options.DataAnnotationLocalizerProvider = (_, factory) => factory.Create(typeof(SharedResource)))

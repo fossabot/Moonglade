@@ -8,7 +8,7 @@
 # Reference: https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest
 
 param(
-    $regionName = "East Asia", 
+    $regionName = "West Europe", 
     [bool] $useLinuxPlanWithDocker = 1, 
     [bool] $createCDN = 0
 )

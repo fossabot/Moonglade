@@ -49,7 +49,7 @@ namespace Moonglade.Configuration
         /// </summary>
         /// <value>
         /// The instagram profile url.
-        /// </value>
+        /// </value> 
         [Display(Name = "Instagram Profile Link")]
         public string Instagram { get; set; }
 
