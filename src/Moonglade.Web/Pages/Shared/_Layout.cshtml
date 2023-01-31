@@ -27,6 +27,22 @@
     <meta name="Robots" content="index, follow" />
     <meta name="revisit-after" content="14 days" />
     <meta name="MSSmartTagsPreventParsing" content="True" />
+    @if (BlogConfig.GeneralSettings.BingSiteVerificationCode != null)
+    {
+        <meta name="msvalidate.01" content="@BlogConfig.GeneralSettings.BingSiteVerificationCode" />
+    }
+    @if (BlogConfig.GeneralSettings.YandexSiteVerificationCode != null)
+    {
+        <meta name='yandex-verification' content='@BlogConfig.GeneralSettings.YandexSiteVerificationCode' />
+    }
+    @if (BlogConfig.GeneralSettings.NortonSaveWebVerificationCode != null)
+    {
+        <meta name='norton-safeweb-site-verification' content='@BlogConfig.GeneralSettings.NortonSaveWebVerificationCode' />
+    }
+    @if (BlogConfig.GeneralSettings.WorldOfTrustVerificationCode != null)
+    {
+        <meta name='wot-verification' content='@BlogConfig.GeneralSettings.WorldOfTrustVerificationCode' />
+    }
     @if (IsSectionDefined("keywords"))
     {
         @await RenderSectionAsync("keywords", false)
@@ -91,6 +107,7 @@
     <link href="~/css/base.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/rwd.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/darkmode.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/lib/cookieconsent/cookieconsent.min.css" rel="stylesheet" asp-append-version="true" />
     @await RenderSectionAsync("head", false)
     <link href="~/theme.css" rel="stylesheet" asp-append-version="true" />
     @if (BlogConfig.CustomStyleSheetSettings.EnableCustomCss)
@@ -231,6 +248,7 @@
     <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
     <script type="module" src="~/js/app/base.js" asp-append-version="true"></script>
     <script src="~/js/app/httpService.js" asp-append-version="true"></script>
+    <script src="~/lib/cookieconsent/cookieconsent.min.js" asp-append-version="true"></script>
 
     @if (BlogConfig.GeneralSettings.AutoDarkLightTheme && (ViewBag.DisableLightSwitch == null || !ViewBag.DisableLightSwitch))
     {
@@ -245,6 +263,30 @@
                     theme.useLightMode();
                 }
             }
+        </script>
+    }
+
+    @if (BlogConfig.GeneralSettings.ClarityProjectId != null)
+    {
+        <script type="text/javascript">
+            (function (c, l, a, r, i, t, y) {
+                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "@(BlogConfig.GeneralSettings.ClarityProjectId)");
+        </script>
+    }
+
+    @if (BlogConfig.GeneralSettings.GoogleAnalytics != null)
+    {
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            var pageTracker = _gat._getTracker("@(BlogConfig.GeneralSettings.GoogleAnalytics)");
+            pageTracker._initData();
+            pageTracker._trackPageview();
         </script>
     }
 

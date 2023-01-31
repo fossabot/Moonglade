@@ -1,9 +1,30 @@
-# Moonglade Blog
+# Moonglade-saigkill Blog
 
-[![.NET Build Linux](https://github.com/saigkill/Moonglade/actions/workflows/dotnet.yml/badge.svg)](https://github.com/saigkill/Moonglade/actions/workflows/dotnet.yml)
-[![Docker Linux x64](https://github.com/saigkill/Moonglade/actions/workflows/docker.yml/badge.svg)](https://github.com/saigkill/Moonglade/actions/workflows/docker.yml)
+|What|Where|
+|-----|-------------------------------------------------------------------------------------|
+|Code  | [https://github.com/saigkill/Moonglade] |
+|Bugs & feature requests  | [https://github.com/saigkill/Moonglade/issues] |
+|The author's blog | [http://saschamanns.de] |
+
+| What | Status |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Code quality Codeclimate | [![Maintainability](https://api.codeclimate.com/v1/badges/2918dcfd1fe8df3f3c17/maintainability)](https://codeclimate.com/github/saigkill/Moonglade/maintainability) |
+|Code quality Sonarcloud | [![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/saigkill_moonglade/master?server=https%3A%2F%2Fsonarcloud.io)](https://sonarcloud.io/project/overview?id=saigkill_moonglade) |
+|Code coverage Codeclimate | [![Test Coverage](https://api.codeclimate.com/v1/badges/2918dcfd1fe8df3f3c17/test_coverage)](https://codeclimate.com/github/saigkill/Moonglade/test_coverage)
+|Continuous integration | [![.NET Build Linux](https://github.com/saigkill/Moonglade/actions/workflows/dotnet.yml/badge.svg)](https://github.com/saigkill/Moonglade/actions/workflows/dotnet.yml) |
+|Docker build & deploy |  [![Docker Linux x64](https://github.com/saigkill/Moonglade/actions/workflows/docker.yml/badge.svg)](https://github.com/saigkill/Moonglade/actions/workflows/docker.yml)|
+|Security check CodeQL | ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/saigkill/Moonglade/codeql.yml) |
+|Security check Snyk | [![Known Vulnerabilities](https://snyk.io/test/github/saigkill/Moonglade/badge.svg)](https://app.snyk.io) |
+|License check | [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsaigkill%2FMoonglade.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsaigkill%2FMoonglade?ref=badge_shield) |
+|Open Issues | ![GitHub issues](https://img.shields.io/github/issues/saigkill/Moonglade) |
+|Open Pull Request | ![Pull Requests](https://img.shields.io/github/issues-pr/saigkill/moonglade) |
+|Conventional commits | [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) |
+|License | ![GitHub](https://img.shields.io/github/license/saigkill/Moonglade) |
+|Downloads|![GitHub All Releases](https://img.shields.io/github/downloads/saigkill/Moonglade/total)|
+
 
 The [.NET](https://dotnet.microsoft.com/) blog system of [edi.wang](https://edi.wang) that runs on [**Microsoft Azure**](https://azure.microsoft.com/en-us/). Designed for developers, enabling most common blogging features including posts, comments, categories, archive, tags and pages.
+This `saigkill` Version is a fork of the original project. It enables Site Verifying services (Bing, Yandex, Norton Safe Web and World of Trust), also some Analytics services (Google Analytics, MS Clarity). Some other interesting features are planned.
 
 ## 📦 Deployment
 

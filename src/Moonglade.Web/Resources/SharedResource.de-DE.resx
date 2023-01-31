@@ -903,4 +903,10 @@
   <data name="Export" xml:space="preserve">
     <value>Exportieren</value>
   </data>
+  <data name="Site Verification" xml:space="preserve">
+    <value>Seitenverifizierung</value>
+  </data>
+  <data name="Social Profiles" xml:space="preserve">
+    <value>Soziale Profile</value>
+  </data>
 </root>

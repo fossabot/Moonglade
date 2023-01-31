@@ -96,6 +96,28 @@ public class GeneralSettings : IBlogSettings
     [Display(Name = "Show Admin login button under sidebar")]
     public bool ShowAdminLoginButton { get; set; }
 
+    [Display(Name = "Bings Site Verification Code")]
+    public string BingSiteVerificationCode { get; set; }
+
+    [Display(Name = "Yandex Verification Code")]
+    public string YandexSiteVerificationCode { get; set; }
+
+    [Display(Name = "Facebook App ID")]
+    public string FacebookAppId { get; set; }
+
+    [Display(Name = "Norton Save Web Site Verification Code")]
+    public string NortonSaveWebVerificationCode { get; set; }
+
+    [Display(Name = "World of Trust Verification Code")]
+    public string WorldOfTrustVerificationCode { get; set; }
+
+    [Display(Name = "Google Analytics Tracker Id")]
+    public string GoogleAnalytics { get; set; }
+
+
+    [Display(Name = "Clarity Project Id")]
+    public string ClarityProjectId { get; set; }
+
     [MaxLength(64)]
     public string AvatarUrl { get; set; }
 

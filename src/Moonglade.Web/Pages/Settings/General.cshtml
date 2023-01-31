@@ -4,19 +4,20 @@
 @inject IMediator Mediator
 @{
     var tzList = ZoneResolver.ListTimeZones().Select(t => new SelectListItem
-    {
-        Text = t.DisplayName,
-        Value = t.Id
-    });
+            {
+                Text = t.DisplayName,
+                Value = t.Id
+            });
 
     var themes = await Mediator.Send(new GetAllThemeSegmentQuery());
     var tmList = themes
         .Select(t => new SelectListItem
-        {
-            Text = t.Name,
-            Value = t.Id.ToString()
-        });
+                {
+                    Text = t.Name,
+                    Value = t.Id.ToString()
+                });
 
+    var settings = BlogConfig.GeneralSettings;
 }
 
 @section scripts{
@@ -41,7 +42,7 @@
 
         var themeModal = new bootstrap.Modal(document.getElementById('thememodal'));
 
-        window.createTheme = function(oFormElement) {
+        window.createTheme = function (oFormElement) {
             callApi(oFormElement.action,
                 'POST',
                 {
@@ -60,7 +61,7 @@
                 });
         }
 
-        window.deleteTheme = function() {
+        window.deleteTheme = function () {
             var selectedThemeId = document.querySelector('#ViewModel_ThemeId').value;
             callApi(`/api/theme/${selectedThemeId}`,
                 'DELETE',
@@ -120,7 +121,7 @@
                                     <input asp-for="ViewModel.CanonicalPrefix" class="form-control" />
                                 </div>
                             </div>
-                            
+
                             <div class="row g-3 align-items-center settings-entry mb-4">
                                 <div class="col-auto">
                                     <i class="bi-clock settings-entry-icon"></i>
@@ -163,7 +164,7 @@
                                     <label class="form-label" asp-for="ViewModel.Description"></label>
                                 </div>
                             </div>
-                            
+
                             <div class="row g-3 align-items-center settings-entry mb-2">
                                 <div class="col-auto">
                                     <i class="bi-text-center settings-entry-icon"></i>
@@ -176,6 +177,48 @@
                                     <input asp-for="ViewModel.ShortDescription" class="form-control" required />
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <h6 class="card-subtitle mb-3 text-muted">@SharedLocalizer["Site Verification"]</h6>
+                    <div class="row">
+                        <div class="row">
+                            <label class="form-label" asp-for="@settings.BingSiteVerificationCode"></label>
+                            <input asp-for="@settings.BingSiteVerificationCode" class="form-control" />
+                        </div>
+                        <div class="row">
+                            <label class="form-label" asp-for="@settings.YandexSiteVerificationCode"></label>
+                            <input asp-for="@settings.YandexSiteVerificationCode" class="form-control" />
+                        </div>
+                        <div class="row">
+                            <label class="form-label" asp-for="@settings.FacebookAppId"></label>
+                            <input asp-for="@settings.FacebookAppId" class="form-control" />
+                        </div>
+                        <div class="row">
+                            <label class="form-label" asp-for="@settings.NortonSaveWebVerificationCode"></label>
+                            <input asp-for="@settings.NortonSaveWebVerificationCode" class="form-control" />
+                        </div>
+                        <div class="row">
+                            <label class="form-label" asp-for="@settings.WorldOfTrustVerificationCode"></label>
+                            <input asp-for="@settings.WorldOfTrustVerificationCode" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <h6 class="card-subtitle mb-3 text-muted">@SharedLocalizer["Analytics"]</h6>
+                    <div class="row">
+                        <div class="row">
+                            <label class="form-label" asp-for="@settings.GoogleAnalytics"></label>
+                            <input asp-for="@settings.GoogleAnalytics" class="form-control" />
+                        </div>
+                        <div class="row">
+                            <label class="form-label" asp-for="@settings.ClarityProjectId"></label>
+                            <input asp-for="@settings.ClarityProjectId" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -200,7 +243,7 @@
                                 </a>
                             </div>
                         </div>
-                        
+
                         <div class="row g-3 align-items-center settings-entry mb-4">
                             <div class="col-auto">
                                 <i class="bi-moon settings-entry-icon"></i>
@@ -211,11 +254,11 @@
                             <div class="col-md-5 text-end">
                                 <div class="form-check form-switch">
                                     <input type="hidden" name="AutoDarkLightTheme" value="false">
-                                    <input type="checkbox" name="AutoDarkLightTheme" value="true" class="form-check-input" @(Model.ViewModel.AutoDarkLightTheme ? "checked" :null)>
+                                    <input type="checkbox" name="AutoDarkLightTheme" value="true" class="form-check-input" @(Model.ViewModel.AutoDarkLightTheme ? "checked" : null)>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="row g-3 align-items-center settings-entry">
                             <div class="col-auto">
                                 <i class="bi-rainbow settings-entry-icon"></i>
@@ -248,7 +291,7 @@
                             <label class="form-check-label" for="@SideBarOption.Disabled">@SharedLocalizer["Disabled"]</label>
                         </div>
                     </div>
-                    
+
                     <div class="row g-3 align-items-center settings-entry mb-2">
                         <div class="col-auto">
                             <i class="bi-file-person settings-entry-icon"></i>
@@ -259,7 +302,7 @@
                         <div class="col-md-5 text-end">
                             <div class="form-check form-switch">
                                 <input type="hidden" name="WidgetsProfile" value="false">
-                                <input type="checkbox" name="WidgetsProfile" value="true" class="form-check-input" @(Model.ViewModel.WidgetsProfile ? "checked" :null)>
+                                <input type="checkbox" name="WidgetsProfile" value="true" class="form-check-input" @(Model.ViewModel.WidgetsProfile ? "checked" : null)>
                             </div>
                         </div>
                     </div>
@@ -273,7 +316,7 @@
                                   rows="10"></textarea>
                         <label class="form-label" asp-for="ViewModel.SideBarCustomizedHtmlPitch"></label>
                     </div>
-                    
+
                     <div class="row g-3 align-items-center settings-entry mb-4">
                         <div class="col-auto">
                             <i class="bi-tags settings-entry-icon"></i>
@@ -288,7 +331,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row g-3 align-items-center settings-entry mb-4">
                         <div class="col-auto">
                             <i class="bi-folder2 settings-entry-icon"></i>
@@ -299,11 +342,11 @@
                         <div class="col-md-5 text-end">
                             <div class="form-check form-switch">
                                 <input type="hidden" name="WidgetsCategoryList" value="false">
-                                <input type="checkbox" name="WidgetsCategoryList" value="true" class="form-check-input" @(Model.ViewModel.WidgetsCategoryList ?"checked" : null)>
+                                <input type="checkbox" name="WidgetsCategoryList" value="true" class="form-check-input" @(Model.ViewModel.WidgetsCategoryList ? "checked" : null)>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row g-3 align-items-center settings-entry mb-4">
                         <div class="col-auto">
                             <i class="bi-link-45deg settings-entry-icon"></i>
@@ -314,11 +357,11 @@
                         <div class="col-md-5 text-end">
                             <div class="form-check form-switch">
                                 <input type="hidden" name="WidgetsFriendLink" value="false">
-                                <input type="checkbox" name="WidgetsFriendLink" value="true" class="form-check-input" @(Model.ViewModel.WidgetsFriendLink ?"checked" : null)>
+                                <input type="checkbox" name="WidgetsFriendLink" value="true" class="form-check-input" @(Model.ViewModel.WidgetsFriendLink ? "checked" : null)>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row g-3 align-items-center settings-entry mb-4">
                         <div class="col-auto">
                             <i class="bi-menu-button settings-entry-icon"></i>
@@ -329,11 +372,11 @@
                         <div class="col-md-5 text-end">
                             <div class="form-check form-switch">
                                 <input type="hidden" name="WidgetsSubscriptionButtons" value="false">
-                                <input type="checkbox" name="WidgetsSubscriptionButtons" value="true" class="form-check-input" @(Model.ViewModel.WidgetsSubscriptionButtons ?"checked" : null)>
+                                <input type="checkbox" name="WidgetsSubscriptionButtons" value="true" class="form-check-input" @(Model.ViewModel.WidgetsSubscriptionButtons ? "checked" : null)>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row g-3 align-items-center settings-entry mb-4">
                         <div class="col-auto">
                             <i class="bi-hand-index settings-entry-icon"></i>
@@ -353,7 +396,7 @@
                         <h6 class="card-subtitle mb-4 text-muted">
                             @SharedLocalizer["Footer"]
                         </h6>
-                        
+
                         <div class="row g-3 align-items-center settings-entry mb-2">
                             <div class="col-auto">
                                 <i class="bi-check2-square settings-entry-icon"></i>
