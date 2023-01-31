@@ -2,6 +2,7 @@
 
 [![.NET Build Linux](https://github.com/saigkill/Moonglade/actions/workflows/dotnet.yml/badge.svg)](https://github.com/saigkill/Moonglade/actions/workflows/dotnet.yml)
 [![Docker Linux x64](https://github.com/saigkill/Moonglade/actions/workflows/docker.yml/badge.svg)](https://github.com/saigkill/Moonglade/actions/workflows/docker.yml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsaigkill%2FMoonglade.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsaigkill%2FMoonglade?ref=badge_shield)
 
 The [.NET](https://dotnet.microsoft.com/) blog system of [edi.wang](https://edi.wang) that runs on [**Microsoft Azure**](https://azure.microsoft.com/en-us/). Designed for developers, enabling most common blogging features including posts, comments, categories, archive, tags and pages.
 
@@ -202,3 +203,7 @@ There are a few individuals already setup thier blogs using Moonglade on Azure (
 - [Hao's House](https://haxu.dev/)
 
 *Just Submit PR or issue if you want your blog to be listed here*
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsaigkill%2FMoonglade.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsaigkill%2FMoonglade?ref=badge_large)
