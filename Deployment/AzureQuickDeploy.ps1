@@ -154,8 +154,8 @@ $appExists = $appCheck.Length -gt 0
 if (!$appExists) {
     Write-Host "Creating Web App"
     if ($useLinuxPlanWithDocker) {
-        Write-Host "Using Linux Plan with Docker image from 'ediwang/moonglade', this deployment will be ready to run."
-        $echo = az webapp create -g $rsgName -p $aspName -n $webAppName --deployment-container-image-name ediwang/moonglade
+        Write-Host "Using Linux Plan with Docker image from 'saigkill0/moonglade-saigkill', this deployment will be ready to run."
+        $echo = az webapp create -g $rsgName -p $aspName -n $webAppName --deployment-container-image-name saigkill0/moonglade-saigkill
     }
     else {
         Write-Host "Using Windows Plan with deployment from GitHub"

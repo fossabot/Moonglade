@@ -5,6 +5,8 @@
     font-style: normal;
 }
 
+@import 'fonts.css';
+
 :root {
     --transparent-light-15: rgba(255, 255, 255, 0.15);
     --transparent-light-20: rgba(255, 255, 255, 0.2);
@@ -137,7 +139,7 @@ h5 {
 }
 
 .font-sairas {
-    font-family: SairaSemiCondensed-Bold, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei" !important;
+    font-family: "Space Grotesk Light", SairaSemiCondensed-Bold, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei" !important;
 }
 
 .flex-spacer {
