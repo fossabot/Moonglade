@@ -179,46 +179,87 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <h6 class="card-subtitle mb-3 text-muted">@SharedLocalizer["Site Verification"]</h6>
-                    <div class="row">
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.BingSiteVerificationCode"></label>
-                            <input asp-for="@settings.BingSiteVerificationCode" class="form-control" />
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        @SharedLocalizer["Site Verification"]
+                    </h6>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-check settings-entry-icon"></i>
                         </div>
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.YandexSiteVerificationCode"></label>
+                        <div class="col">
+                            <label asp-for="@settings.YandexSiteVerificationCode"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
                             <input asp-for="@settings.YandexSiteVerificationCode" class="form-control" />
                         </div>
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.FacebookAppId"></label>
+                    </div>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-check settings-entry-icon"></i>
+                        </div>
+                        <div class="col">
+                            <label asp-for="@settings.BingSiteVerificationCode"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
+                            <input asp-for="@settings.BingSiteVerificationCode" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-check settings-entry-icon"></i>
+                        </div>
+                        <div class="col">
+                            <label asp-for="@settings.FacebookAppId"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
                             <input asp-for="@settings.FacebookAppId" class="form-control" />
                         </div>
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.NortonSaveWebVerificationCode"></label>
+                    </div>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-check settings-entry-icon"></i>
+                        </div>
+                        <div class="col">
+                            <label asp-for="@settings.NortonSaveWebVerificationCode"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
                             <input asp-for="@settings.NortonSaveWebVerificationCode" class="form-control" />
                         </div>
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.WorldOfTrustVerificationCode"></label>
+                    </div>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-check settings-entry-icon"></i>
+                        </div>
+                        <div class="col">
+                            <label asp-for="@settings.WorldOfTrustVerificationCode"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
                             <input asp-for="@settings.WorldOfTrustVerificationCode" class="form-control" />
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <h6 class="card-subtitle mb-3 text-muted">@SharedLocalizer["Analytics"]</h6>
-                    <div class="row">
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.GoogleAnalytics"></label>
-                            <input asp-for="@settings.GoogleAnalytics" class="form-control" />
+                    <div>
+                        <h6 class="card-subtitle mb-3 text-muted">@SharedLocalizer["Analytics"]</h6>
+                        <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                            <div class="col-auto">
+                                <i class="bi-search settings-entry-icon"></i>
+                            </div>
+                            <div class="col">
+                                <label asp-for="@settings.GoogleAnalytics"></label>
+                            </div>
+                            <div class="col-md-5 text-end">
+                                <input asp-for="@settings.GoogleAnalytics" class="form-control" />
+                            </div>
                         </div>
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.ClarityProjectId"></label>
-                            <input asp-for="@settings.ClarityProjectId" class="form-control" />
+                        <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                            <div class="col-auto">
+                                <i class="bi-search settings-entry-icon"></i>
+                            </div>
+                            <div class="col">
+                                <label asp-for="@settings.ClarityProjectId"></label>
+                            </div>
+                            <div class="col-md-5 text-end">
+                                <input asp-for="@settings.ClarityProjectId" class="form-control" />
+                            </div>
                         </div>
                     </div>
                 </div>

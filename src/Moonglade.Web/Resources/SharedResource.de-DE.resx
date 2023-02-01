@@ -909,4 +909,16 @@
   <data name="Social Profiles" xml:space="preserve">
     <value>Soziale Profile</value>
   </data>
+  <data name="Minute" xml:space="preserve">
+    <value>Minute</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minuten</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>Sekunde</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Sekunden</value>
+  </data>
 </root>
