@@ -25,6 +25,10 @@ bld/
 [Oo]bj/
 [Ll]og/
 
+wwwroot/lib/codersrank/*
+wwwroot/lib/cookieconsent/*
+wwwroot/lib/fortawesome/fontawesome-free/*
+
 # PublishProfiles
 Properties/PublishProfiles/*
 
@@ -266,3 +270,4 @@ paket-files/
 __pycache__/
 *.pyc
 *.txt
+/src/Moonglade.Web/wwwroot/lib/fortawesome/fontawesome-free
