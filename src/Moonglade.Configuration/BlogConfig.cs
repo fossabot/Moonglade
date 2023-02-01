@@ -51,7 +51,7 @@ public class BlogConfig : IBlogConfig
         ImageSettings = config[nameof(ImageSettings)].FromJson<ImageSettings>();
         AdvancedSettings = config[nameof(AdvancedSettings)].FromJson<AdvancedSettings>();
         CustomStyleSheetSettings = config[nameof(CustomStyleSheetSettings)].FromJson<CustomStyleSheetSettings>();
-        SocialProfileSettings = config[nameof(SocialProfileSettings)].FromJson<SocialProfileSettings>();
+        //SocialProfileSettings = config[nameof(SocialProfileSettings)].FromJson<SocialProfileSettings>();
         //SyncfusionSettings = config[nameof(SyncfusionSettings)].FromJson<SyncfusionSettings>();
         //DonationSettings = config[nameof(DonationSettings)].FromJson<DonationsSettings>();
     }
