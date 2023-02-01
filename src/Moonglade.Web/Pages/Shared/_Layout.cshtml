@@ -124,10 +124,13 @@
     </environment>
 
     <!-- Syncfusion Essential JS 2 Styles -->
-    <link rel="stylesheet" href="@syncStyle" />
+    @if (BlogConfig.GeneralSettings.SyncfusionLicenseKey != null)
+    {
+        <link rel="stylesheet" href="@syncStyle" />
 
-    <!-- Syncfusion ASP.NET Core controls scripts -->
-    <script src="@syncScript"></script>
+        <!-- Syncfusion ASP.NET Core controls scripts -->
+        <script src="@syncScript"></script>
+    }
 
     <link href="~/lib/cookieconsent/cookieconsent.min.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/lib/fortawesome/fontawesome-free/css/all.css" rel="stylesheet" />
