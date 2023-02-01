@@ -118,6 +118,24 @@ public class GeneralSettings : IBlogSettings
     [Display(Name = "Clarity Project Id")]
     public string ClarityProjectId { get; set; }
 
+    /// <summary>
+    /// Gets or sets the license key.
+    /// </summary>
+    /// <value>
+    /// The license key.
+    /// </value>
+    [Display(Name = "Syncfusions Licensekey")]
+    public string SyncfusionLicenseKey { get; set; }
+
+    /// <summary>
+    /// Gets or sets the used version.
+    /// </summary>
+    /// <value>
+    /// The used version.
+    /// </value>
+    [Display(Name = "Current used Syncfusion Version. If the official Version is 20.4.0.38 use 20.4.38")]
+    public string SyncfusionVersion { get; set; }
+
     [MaxLength(64)]
     public string AvatarUrl { get; set; }
 
