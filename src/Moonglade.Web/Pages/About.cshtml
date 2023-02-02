@@ -1,0 +1,101 @@
+﻿@page "/about1"
+@model Moonglade.Web.Pages.AboutModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject Moonglade.Data.DataProviders.PublicationProvider _pubs
+@inject IViewLocalizer _localizer
+@{
+}
+@section head {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/about.css" />
+        <link rel="stylesheet" href="~/css/timeline.css" />
+        <link href="~/lib/fortawesome/fontawesome-free/css/all.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/about.min.css" />
+        <link rel="stylesheet" href="~/css/timeline.min.css" />
+        <link href="~/lib/fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    </environment>
+}
+
+@section scripts {
+    <environment include="Development">
+        <script src="~/js/app/about.js"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/lodash/lodash.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/app/about.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/lodash/lodash.min.js"></script>
+    </environment>
+}
+<div class="sec pt-4">
+    <div class="container">
+        <h3>@_localizer["Me and the Blog"]</h3>
+        <hr />
+        <div class="row">
+            <div class="col-md-7">
+                <section id="self-intro">
+                    <blockquote class="blockquote">
+                        <p>
+                            @_localizer["intro"]
+                        </p>
+                        <img src="https://github-readme-stats-ten-gilt.vercel.app/api?username=saigkill" />
+                    </blockquote>
+                    <div>
+                        <a href="https://github.com/saigkill" class="btn btn-outline-success" target="_blank">
+                            <span class="icon-github"></span>
+                            GitHub
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-5">
+                <div class="center-align">
+                    <img class="img-fluid img-thumbnail" width="45%" src="https://moongladestorage722.blob.core.windows.net/moongladeimages722/blog/Sascha1.jpg" />
+                    <img class="img-fluid img-thumbnail" width="45%" src="https://moongladestorage722.blob.core.windows.net/moongladeimages722/blog/coat-of-arms.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sec">
+    <h4 class="center-text"><@_localizer["connect-header"]</h4>
+    <partial name="Shared/_SocialProfiles" />
+</div>
+
+
+<div class="sec">
+    <h4 class="center-text">@_localizer["publications"]</h4>
+    @foreach (var pub in _pubs.Get())
+    {
+        <div tabindex="0" class="e-card" id="@pub.Id">
+            <div class="card-header">
+                <div class="e-card-header-caption">
+                    <h4 class="card-subtitle"><a href="@pub.Link" target="_blank" class="">@pub.Title</a></h4>
+                </div>
+            </div>
+            <div class="e-card-content">
+
+                <div class="card-text"><small>@pub.Authors</small></div>
+                <div class="card-text"><small>@pub.PublicationName - @pub.Publisher</small></div>
+                @if (!string.IsNullOrWhiteSpace(pub.Identifier))
+                {
+                    <div class="muted"><small>@pub.Identifier, @_localizer["publisher-published"]: <time datetime="@pub.DatePublished">@pub.DatePublished</time></small></div>
+                }
+                else
+                {
+                    <div class="muted"><small>@_localizer["publisher-published"]: @pub.DatePublished</small></div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<div class="sec">
+    <h4 class="center-text">@_localizer["opensource"]</h4>
+    <div class="" id="openSourceList">
+    </div>
+</div>
