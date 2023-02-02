@@ -4,6 +4,7 @@ namespace Moonglade.Data;
 
 public class BlogDbContext : DbContext
 {
+
     public BlogDbContext()
     {
     }
@@ -31,6 +32,8 @@ public class BlogDbContext : DbContext
     public virtual DbSet<BlogAssetEntity> BlogAsset { get; set; }
     public virtual DbSet<BlogConfigurationEntity> BlogConfiguration { get; set; }
 
+    public virtual DbSet<PublicationsEntity> Publications { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // base.OnModelCreating(modelBuilder);
@@ -54,6 +57,12 @@ public class BlogDbContext : DbContext
                     .HasOne(pt => pt.Post)
                     .WithMany()
                     .HasForeignKey(pt => pt.PostId));
+
+        //modelBuilder.Entity<PublicationsEntity>(b =>
+        //{
+        //    b.HasKey(e => e.Id);
+        //    b.Property(e => e.Id).ValueGeneratedOnAdd();
+        //});
     }
 }
 

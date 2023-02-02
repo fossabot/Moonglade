@@ -13,10 +13,7 @@ public interface IBlogConfig
     ImageSettings ImageSettings { get; set; }
     AdvancedSettings AdvancedSettings { get; set; }
     CustomStyleSheetSettings CustomStyleSheetSettings { get; set; }
-    //SiteVerificationSettings SiteVerificationSettings { get; set; }
-    //AnalyticsSettings AnalyticsSettings { get; set; }
-    //SocialProfileSettings SocialProfileSettings { get; set; }
-    //SyncfusionSettings SyncfusionSettings { get; set; }
+    SocialProfileSettings SocialProfileSettings { get; set; }
     //DonationsSettings DonationSettings { get; set; }
     void LoadFromConfig(IDictionary<string, string> config);
     KeyValuePair<string, string> UpdateAsync<T>(T blogSettings) where T : IBlogSettings;
@@ -38,13 +35,7 @@ public class BlogConfig : IBlogConfig
 
     public CustomStyleSheetSettings CustomStyleSheetSettings { get; set; }
 
-    //public SiteVerificationSettings SiteVerificationSettings { get; set; }
-
-    //public AnalyticsSettings AnalyticsSettings { get; set; }
-
-    //public SocialProfileSettings SocialProfileSettings { get; set; }
-
-    //public SyncfusionSettings SyncfusionSettings { get; set; }
+    public SocialProfileSettings SocialProfileSettings { get; set; }
 
     //public DonationsSettings DonationSettings { get; set; }
 
@@ -57,10 +48,7 @@ public class BlogConfig : IBlogConfig
         ImageSettings = config[nameof(ImageSettings)].FromJson<ImageSettings>();
         AdvancedSettings = config[nameof(AdvancedSettings)].FromJson<AdvancedSettings>();
         CustomStyleSheetSettings = config[nameof(CustomStyleSheetSettings)].FromJson<CustomStyleSheetSettings>();
-        //SiteVerificationSettings = config[nameof(SiteVerificationSettings)].FromJson<SiteVerificationSettings>();
-        //AnalyticsSettings = config[nameof(AnalyticsSettings)].FromJson<AnalyticsSettings>();
-        //SocialProfileSettings = config[nameof(SocialProfileSettings)].FromJson<SocialProfileSettings>();
-        //SyncfusionSettings = config[nameof(SyncfusionSettings)].FromJson<SyncfusionSettings>();
+        SocialProfileSettings = config[nameof(SocialProfileSettings)].FromJson<SocialProfileSettings>();
         //DonationSettings = config[nameof(DonationSettings)].FromJson<DonationsSettings>();
     }
 

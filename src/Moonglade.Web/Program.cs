@@ -11,6 +11,7 @@ using Microsoft.ApplicationInsights.Extensibility.Implementation;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc.Razor;
 
+using Moonglade.Data.DataProviders;
 using Moonglade.Data.MySql;
 using Moonglade.Data.PostgreSql;
 using Moonglade.Data.SqlServer;
@@ -116,10 +117,18 @@ void ConfigureServices(IServiceCollection services)
         }
     });
 
+    var syncfusionLicense = builder.Configuration.GetSection("SyncfusionLicenseKey").ToString();
+    if (syncfusionLicense != null)
+    {
+        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionLicense);
+    }
+
     services.AddOptions()
             .AddHttpContextAccessor()
             .AddRateLimit(builder.Configuration.GetSection("IpRateLimiting"));
     services.AddApplicationInsightsTelemetry();
+
+    services.AddScoped<PublicationProvider>();
 
     services.AddSession(options =>
     {
