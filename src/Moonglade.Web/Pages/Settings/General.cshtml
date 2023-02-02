@@ -179,46 +179,87 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <h6 class="card-subtitle mb-3 text-muted">@SharedLocalizer["Site Verification"]</h6>
-                    <div class="row">
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.BingSiteVerificationCode"></label>
-                            <input asp-for="@settings.BingSiteVerificationCode" class="form-control" />
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        @SharedLocalizer["Site Verification"]
+                    </h6>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-check settings-entry-icon"></i>
                         </div>
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.YandexSiteVerificationCode"></label>
+                        <div class="col">
+                            <label asp-for="@settings.YandexSiteVerificationCode"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
                             <input asp-for="@settings.YandexSiteVerificationCode" class="form-control" />
                         </div>
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.FacebookAppId"></label>
+                    </div>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-check settings-entry-icon"></i>
+                        </div>
+                        <div class="col">
+                            <label asp-for="@settings.BingSiteVerificationCode"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
+                            <input asp-for="@settings.BingSiteVerificationCode" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-check settings-entry-icon"></i>
+                        </div>
+                        <div class="col">
+                            <label asp-for="@settings.FacebookAppId"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
                             <input asp-for="@settings.FacebookAppId" class="form-control" />
                         </div>
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.NortonSaveWebVerificationCode"></label>
+                    </div>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-check settings-entry-icon"></i>
+                        </div>
+                        <div class="col">
+                            <label asp-for="@settings.NortonSaveWebVerificationCode"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
                             <input asp-for="@settings.NortonSaveWebVerificationCode" class="form-control" />
                         </div>
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.WorldOfTrustVerificationCode"></label>
+                    </div>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-check settings-entry-icon"></i>
+                        </div>
+                        <div class="col">
+                            <label asp-for="@settings.WorldOfTrustVerificationCode"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
                             <input asp-for="@settings.WorldOfTrustVerificationCode" class="form-control" />
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <h6 class="card-subtitle mb-3 text-muted">@SharedLocalizer["Analytics"]</h6>
-                    <div class="row">
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.GoogleAnalytics"></label>
-                            <input asp-for="@settings.GoogleAnalytics" class="form-control" />
+                    <div>
+                        <h6 class="card-subtitle mb-3 text-muted">@SharedLocalizer["Analytics"]</h6>
+                        <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                            <div class="col-auto">
+                                <i class="bi-search settings-entry-icon"></i>
+                            </div>
+                            <div class="col">
+                                <label asp-for="@settings.GoogleAnalytics"></label>
+                            </div>
+                            <div class="col-md-5 text-end">
+                                <input asp-for="@settings.GoogleAnalytics" class="form-control" />
+                            </div>
                         </div>
-                        <div class="row">
-                            <label class="form-label" asp-for="@settings.ClarityProjectId"></label>
-                            <input asp-for="@settings.ClarityProjectId" class="form-control" />
+                        <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                            <div class="col-auto">
+                                <i class="bi-search settings-entry-icon"></i>
+                            </div>
+                            <div class="col">
+                                <label asp-for="@settings.ClarityProjectId"></label>
+                            </div>
+                            <div class="col-md-5 text-end">
+                                <input asp-for="@settings.ClarityProjectId" class="form-control" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -391,32 +432,57 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="mt-5">
-                        <h6 class="card-subtitle mb-4 text-muted">
-                            @SharedLocalizer["Footer"]
-                        </h6>
-
-                        <div class="row g-3 align-items-center settings-entry mb-2">
-                            <div class="col-auto">
-                                <i class="bi-check2-square settings-entry-icon"></i>
-                            </div>
-                            <div class="col">
-                                <label asp-for="ViewModel.Copyright"></label>
-                                <div class="form-text">@SharedLocalizer["Use [c] for copyright mark: &copy;, [year] for current year."]</div>
-                            </div>
-                            <div class="col-md-5 text-end">
-                                <input asp-for="ViewModel.Copyright" class="form-control" required />
-                            </div>
+                </div>
+                <div>
+                    <h6 class="card-subtitle mb-3 text-muted">@SharedLocalizer["Syncfusion Settings"]</h6>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-award-fill settings-entry-icon"></i>
                         </div>
-
-                        <div class="form-floating">
-                            <textarea asp-for="ViewModel.FooterCustomizedHtmlPitch"
-                                      placeholder="@Html.DisplayNameFor(m => m.ViewModel.FooterCustomizedHtmlPitch)"
-                                      class="form-control form-control-sm h-100px textarea-code"
-                                      spellcheck="false" rows="10" cols="10"></textarea>
-                            <label class="form-label" asp-for="ViewModel.FooterCustomizedHtmlPitch"></label>
+                        <div class="col">
+                            <label asp-for="@settings.SyncfusionLicenseKey"></label>
                         </div>
+                        <div class="col-md-5 text-end">
+                            <input asp-for="@settings.SyncfusionLicenseKey" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center settings-entry mt-1 mb-4">
+                        <div class="col-auto">
+                            <i class="bi-1-circle-fill settings-entry-icon"></i>
+                        </div>
+                        <div class="col">
+                            <label asp-for="@settings.SyncfusionVersion"></label>
+                        </div>
+                        <div class="col-md-5 text-end">
+                            <input asp-for="@settings.SyncfusionVersion" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <h6 class="card-subtitle mb-4 text-muted">
+                        @SharedLocalizer["Footer"]
+                    </h6>
+
+                    <div class="row g-3 align-items-center settings-entry mb-2">
+                        <div class="col-auto">
+                            <i class="bi-check2-square settings-entry-icon"></i>
+                        </div>
+                        <div class="col">
+                            <label asp-for="ViewModel.Copyright"></label>
+                            <div class="form-text">@SharedLocalizer["Use [c] for copyright mark: &copy;, [year] for current year."]</div>
+                        </div>
+                        <div class="col-md-5 text-end">
+                            <input asp-for="ViewModel.Copyright" class="form-control" required />
+                        </div>
+                    </div>
+
+                    <div class="form-floating">
+                        <textarea asp-for="ViewModel.FooterCustomizedHtmlPitch"
+                                  placeholder="@Html.DisplayNameFor(m => m.ViewModel.FooterCustomizedHtmlPitch)"
+                                  class="form-control form-control-sm h-100px textarea-code"
+                                  spellcheck="false" rows="10" cols="10"></textarea>
+                        <label class="form-label" asp-for="ViewModel.FooterCustomizedHtmlPitch"></label>
                     </div>
                 </div>
             </div>

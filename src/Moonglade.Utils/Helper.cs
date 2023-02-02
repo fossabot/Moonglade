@@ -1,13 +1,15 @@
-﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.Win32;
+﻿using System.Globalization;
 using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
+
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Win32;
 
 namespace Moonglade.Utils;
 
@@ -538,4 +540,19 @@ public static class Helper
         { "#", "sharp" },
         { " ", "-" }
     };
+
+    public static LanguageEnum GetLanguage()
+    {
+        string culture = CultureInfo.CurrentCulture.Name;
+
+        switch (culture)
+        {
+            case "de-DE":
+                return LanguageEnum.German;
+            case "en-US":
+                return LanguageEnum.English;
+            default:
+                return LanguageEnum.Unknown;
+        }
+    }
 }

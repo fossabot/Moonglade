@@ -2,7 +2,7 @@ name: Docker Linux x64
 
 on:
   push:
-    branches: [ release ]
+    branches: [ master, release ]
     #paths:
     #- src/**
 jobs:

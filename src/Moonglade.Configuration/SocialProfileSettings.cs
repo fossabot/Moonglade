@@ -260,5 +260,11 @@ namespace Moonglade.Configuration
         /// </value>
         [Display(Name = "CodeStats Profile Link")]
         public string CodeStats { get; set; }
+
+        /// <summary>
+        /// Gets or sets the KeyBase profile page.
+        /// </summary>
+        [Display(Name = "KeyBase Profile link")]
+        public string KeyBase { get; set; }
     }
 }

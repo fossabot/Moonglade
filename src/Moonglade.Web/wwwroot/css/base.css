@@ -5,8 +5,6 @@
     font-style: normal;
 }
 
-@import 'fonts.css';
-
 :root {
     --transparent-light-15: rgba(255, 255, 255, 0.15);
     --transparent-light-20: rgba(255, 255, 255, 0.2);

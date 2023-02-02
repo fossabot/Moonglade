@@ -14,7 +14,6 @@ public interface IBlogConfig
     AdvancedSettings AdvancedSettings { get; set; }
     CustomStyleSheetSettings CustomStyleSheetSettings { get; set; }
     SocialProfileSettings SocialProfileSettings { get; set; }
-    //SyncfusionSettings SyncfusionSettings { get; set; }
     //DonationsSettings DonationSettings { get; set; }
     void LoadFromConfig(IDictionary<string, string> config);
     KeyValuePair<string, string> UpdateAsync<T>(T blogSettings) where T : IBlogSettings;
@@ -38,8 +37,6 @@ public class BlogConfig : IBlogConfig
 
     public SocialProfileSettings SocialProfileSettings { get; set; }
 
-    //public SyncfusionSettings SyncfusionSettings { get; set; }
-
     //public DonationsSettings DonationSettings { get; set; }
 
     public void LoadFromConfig(IDictionary<string, string> config)
@@ -52,7 +49,6 @@ public class BlogConfig : IBlogConfig
         AdvancedSettings = config[nameof(AdvancedSettings)].FromJson<AdvancedSettings>();
         CustomStyleSheetSettings = config[nameof(CustomStyleSheetSettings)].FromJson<CustomStyleSheetSettings>();
         SocialProfileSettings = config[nameof(SocialProfileSettings)].FromJson<SocialProfileSettings>();
-        //SyncfusionSettings = config[nameof(SyncfusionSettings)].FromJson<SyncfusionSettings>();
         //DonationSettings = config[nameof(DonationSettings)].FromJson<DonationsSettings>();
     }
 
